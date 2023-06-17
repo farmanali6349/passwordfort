@@ -1,0 +1,677 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Roboto Mono', monospace; */
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+header {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.196);
+    position: relative;
+
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+header img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+header h2 {
+    white-space: nowrap;
+    font-size: 30px;
+}
+
+header h2 sup {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FF6201;
+
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav img {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style-type: none;
+}
+
+nav ul li a {
+    color: black;
+    font-size: 14px;
+}
+
+
+
+/* ------------------------ CONTAINER -------------------------- */
+.container {
+    width: 100%;
+    padding: 30px 50px;
+    min-height: 90vh;
+
+}
+
+.container .generate {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.generate div {
+    width: 100%;
+    border: 2px dashed gray;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.generate div input {
+    width: 100%;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-family: 'Source Code Pro', monospace;
+    height: 50px;
+    background-color: #ff62012c;
+}
+
+.generate div .copy {
+    cursor: pointer;
+    position: absolute;
+    right: 21px;
+    width: fit-content;
+    background-color: rgba(242, 233, 233, 0.537);
+    border: 1px solid black;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 18px;
+}
+
+.generate div .copy.active {
+    background-color: #FF6201;
+    color: white;
+}
+
+
+
+#re-generate {
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+#re-generate img {
+    width: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+#re-generate img:hover {
+    transform: rotate(-20deg);
+}
+
+.row2 {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.length {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.length span {
+    white-space: nowrap;
+}
+
+.length span:nth-of-type(1) {
+    font-weight: 600;
+}
+.length span:nth-of-type(2) {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.length span:nth-of-type(3) {
+    font-weight: 600;
+    color: green;
+}
+.length input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+
+}
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #FF6201;
+    height: 0.5rem;
+    border-radius: 16px;
+}
+
+/******** Firefox ********/
+input[type="range"]::-moz-range-track {
+    background: #FF6201;
+    height: 0.5rem;
+    border-radius: 10px;
+
+}
+
+/***** Thumb Styles *****/
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    margin-top: -5px;
+    /* Centers thumb on the track */
+    background-color: #000;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+/***** Thumb Styles *****/
+/***** Firefox *****/
+input[type="range"]::-moz-range-thumb {
+    border: none;
+    /*Removes extra border that FF applies*/
+    border-radius: 0;
+    /*Removes default border-radius that FF applies*/
+    background-color: #5cd5eb;
+    height: 2rem;
+    width: 1rem;
+}
+
+/***** Focus Styles *****/
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/***** Chrome, Safari, Opera, and Edge Chromium *****/
+input[type="range"]:focus::-webkit-slider-thumb {
+    border: 1px solid #053a5f;
+    outline: 3px solid #053a5f;
+    outline-offset: 0.125rem;
+}
+
+/******** Firefox ********/
+input[type="range"]:focus::-moz-range-thumb {
+    border: 1px solid #053a5f;
+    outline: 3px solid #053a5f;
+    outline-offset: 0.125rem;
+}
+
+.length + span {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: green;
+    margin: 0px 20px;
+}
+#funny-password {
+    padding: 5px 20px;
+    font-size: 12px;
+    background-color: #ff6201c7;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 16px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.4s;
+    display: inline-block;
+    align-self: flex-end;
+}
+
+#funny-password:hover {
+    background-color: #FF6201;
+}
+
+#save-password {
+    padding: 5px 20px;
+    font-size: 12px;
+    background-color: #ff6201c7;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 16px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.4s;
+    display: inline-block;
+    align-self: flex-end;
+}
+
+#save-password:hover {
+    background-color: #FF6201;
+}
+
+
+#title-input {
+    padding: 5px 0px 5px 10px;
+    font-size: 17px;
+    width: 100%;
+    background-color: #ff62012c;
+    border: 1px solid black;
+    outline: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    font-weight: 600;
+}
+
+.input-title {
+    position: absolute;
+    right: 0px;
+    bottom: -18px;
+    display: none;
+    width: 40%;
+    transition: 0.5s;
+}
+
+
+.row2 .input-title.show {
+    bottom: -62px;
+    display: block;
+}
+
+.input-title div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-title div p {
+    font-size: 11px;
+    color: #FF6201;
+    width: fit-content;
+}
+
+
+/* --------------------- MY PASSWORDS DIV ---------------------- */
+
+.mypasswords {
+    margin-top: 70px;
+}
+
+.mypasswords h2 {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mypasswords h2 + p {
+    font-size: 14px;
+    color: red;
+    text-align: center;
+}
+
+.passwords {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px 20px;
+  }
+  
+.password {
+    padding: 10px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.215);
+    border-radius: 7px;
+    position: relative;
+    
+}
+
+.password:hover {
+    background-color: #ff620111;
+}
+
+.password h4 {
+    font-weight: 400;
+}
+
+.password button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.password button img{
+    width: 25px;
+}
+
+.password .buttons {
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: -20px;
+    right: 10px;
+    padding-top: 20px;
+    display: none;
+}
+
+.password:hover .buttons {
+    display: flex;
+}
+
+.password .buttons button {
+    font-size: 10px;
+    text-decoration: underline;
+}
+
+.password .buttons button:nth-child(1) {
+    color: blue;
+}
+
+.password .buttons button:nth-child(2) {
+    color: red;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .row2 {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .row2 .length {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+
+    .row2 .length input {
+        width: 68%;
+    }
+
+    .row2 span:nth-of-type(2) {
+        width: 60px;
+    }
+
+    .row2 span:nth-of-type(3) {
+        width: 102px;
+    }
+
+    .row2 .buttons {
+        margin-top: 15px;
+    }
+
+    .row2 .input-title {
+        right: none;
+        left: 0px;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 672px) {
+    nav img {
+        cursor: pointer;
+        display: block;
+        width: 25px;
+    }
+
+    nav ul {
+        width: 275px;
+        height: 100vh;
+        position: fixed;
+        right: -275px;
+        top: 0px;
+        z-index: 5;
+        background-color: rgb(230, 223, 223);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 30px;
+        transition: right 0.5s;
+        list-style: disc;
+        list-style-image: url('/RESOURCES/logo.svg');
+    }
+
+    nav ul li {
+        padding-left: 10px;
+
+    }
+
+    
+    nav ul li:nth-child(1) {
+        list-style: none;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    nav ul li:nth-child(2) {
+        margin-top: 30px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+}
+@media only screen and (max-width: 546px) {
+
+
+    .container {
+        padding: 30px 25px;
+    }
+
+    header img {
+        width: 30px;
+    }
+
+    header h2 {
+        font-size: 30px;
+    }
+
+    header h2 sup {
+        font-size: 13px;
+    }
+
+   
+
+    #funny-password {
+        font-size: 11px;
+    }
+
+    #save-password {
+        font-size: 11px;
+    }
+
+    .row2 .input-title {
+        width: 100%;
+    }
+
+    
+
+
+}
+
+@media only screen and (max-width: 415px) {
+    header img {
+        width: 22px;
+    }
+
+    header h2 {
+        font-size: 22px;
+    }
+
+    header h2 sup {
+        font-size: 10px;
+    }
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    .generate div input {
+        font-size: 18px;
+        height: 40px;
+        font-family: 'Source Code Pro', monospace;
+    }
+
+    .generate div .copy {
+        right: 10px;
+        padding: 2px 8px;
+        font-size: 10px;
+    }
+
+    #re-generate img {
+        width: 20px;
+    }
+
+    .row2 {
+        align-items: center;
+    }
+
+    .length span:nth-of-type(1) {
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .row2 span:nth-of-type(3) {
+        font-size: 13px;
+        width: 83px;
+    }
+
+    
+
+
+
+    #funny-password {
+        font-size: 10px;
+        font-weight: 500;
+    }
+
+    #save-password {
+        font-weight: 500;
+        font-size: 10px;
+    }
+
+    #title-input {
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .mypasswords h2 {
+        font-size: 28px;
+    }
+
+    .mypasswords h2 + p {
+        font-size: 11px;
+    }
+
+    .passwords {
+        grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+    }
+
+    .password {
+        padding: 10px 13px;
+    }
+
+    .password h4 {
+        font-size: 12px;
+    }
+
+    .password button img {
+        width: 20px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 352px) {
+
+    header h2 {
+        font-size: 18px;
+    }
+
+    header img {
+        margin-right: 5px;
+    }
+
+    .generate div input {
+        text-align: left;
+        font-size: 15px;
+        padding-left: 12px;
+    }
+
+    .passwords {
+        grid-template-columns: repeat(auto-fit, minmax(236px, 1fr));
+    }
+}
+
+p.attribution {
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+    color: white;
+    background-color: #212121;
+}
+
+p.attribution a {
+    color: rgb(176, 131, 219);
+}
